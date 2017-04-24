@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1492995652 source:c:\users\andres\documents\projects\orga-lab2\orga-lab2\fprint.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"estructuras.h"
+	"funciones.h"
+	"fprint.h"
+
+1492994452 c:\users\andres\documents\projects\orga-lab2\orga-lab2\estructuras.h
+
+1492991323 c:\users\andres\documents\projects\orga-lab2\orga-lab2\funciones.h
+	"estructuras.h"
+
+1492437688 c:\users\andres\documents\projects\orga-lab2\orga-lab2\fprint.h
+
+1492999027 source:c:\users\andres\documents\projects\orga-lab2\orga-lab2\funciones.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"estructuras.h"
+	"mips.h"
+	"fprint.h"
+
+1492437688 c:\users\andres\documents\projects\orga-lab2\orga-lab2\mips.h
+	"estructuras.h"
+	<stdio.h>
+
+1492999415 source:c:\users\andres\documents\projects\orga-lab2\orga-lab2\main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"estructuras.h"
+	"funciones.h"
+
+1492437688 source:c:\users\andres\documents\projects\orga-lab2\orga-lab2\mips.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"estructuras.h"
+	"funciones.h"
+	"fprint.h"
+

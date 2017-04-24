@@ -1,0 +1,1008 @@
+j main:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+addi $a0, $zero, 6:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+jal factorial:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+beq $a0, $zero, condicionBorde:
+RegDst:  x
+Jump:    0
+Branch:  1
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  1
+MemWrite:0
+ALUSrc:  0
+RegWrite:0
+
+addi $sp, $sp, -8:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+sw $ra, 0($sp):
+RegDst:  x
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:1
+ALUSrc:  1
+RegWrite:0
+
+sw $a0, 4($sp):
+RegDst:  x
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:1
+ALUSrc:  1
+RegWrite:0
+
+addi $a0, $a0, -1:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+add $t0, $t0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+add $t1, $t0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+jal factorial:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+beq $a0, $zero, condicionBorde:
+RegDst:  x
+Jump:    0
+Branch:  1
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  1
+MemWrite:0
+ALUSrc:  0
+RegWrite:0
+
+addi $sp, $sp, -8:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+sw $ra, 0($sp):
+RegDst:  x
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:1
+ALUSrc:  1
+RegWrite:0
+
+sw $a0, 4($sp):
+RegDst:  x
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:1
+ALUSrc:  1
+RegWrite:0
+
+addi $a0, $a0, -1:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+add $t0, $t0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+add $t1, $t0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+jal factorial:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+beq $a0, $zero, condicionBorde:
+RegDst:  x
+Jump:    0
+Branch:  1
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  1
+MemWrite:0
+ALUSrc:  0
+RegWrite:0
+
+addi $sp, $sp, -8:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+sw $ra, 0($sp):
+RegDst:  x
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:1
+ALUSrc:  1
+RegWrite:0
+
+sw $a0, 4($sp):
+RegDst:  x
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:1
+ALUSrc:  1
+RegWrite:0
+
+addi $a0, $a0, -1:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+add $t0, $t0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+add $t1, $t0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+jal factorial:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+beq $a0, $zero, condicionBorde:
+RegDst:  x
+Jump:    0
+Branch:  1
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  1
+MemWrite:0
+ALUSrc:  0
+RegWrite:0
+
+addi $sp, $sp, -8:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+sw $ra, 0($sp):
+RegDst:  x
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:1
+ALUSrc:  1
+RegWrite:0
+
+sw $a0, 4($sp):
+RegDst:  x
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:1
+ALUSrc:  1
+RegWrite:0
+
+addi $a0, $a0, -1:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+add $t0, $t0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+add $t1, $t0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+jal factorial:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+beq $a0, $zero, condicionBorde:
+RegDst:  x
+Jump:    0
+Branch:  1
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  1
+MemWrite:0
+ALUSrc:  0
+RegWrite:0
+
+addi $sp, $sp, -8:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+sw $ra, 0($sp):
+RegDst:  x
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:1
+ALUSrc:  1
+RegWrite:0
+
+sw $a0, 4($sp):
+RegDst:  x
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:1
+ALUSrc:  1
+RegWrite:0
+
+addi $a0, $a0, -1:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+add $t0, $t0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+add $t1, $t0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+jal factorial:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+beq $a0, $zero, condicionBorde:
+RegDst:  x
+Jump:    0
+Branch:  1
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  1
+MemWrite:0
+ALUSrc:  0
+RegWrite:0
+
+addi $sp, $sp, -8:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+sw $ra, 0($sp):
+RegDst:  x
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:1
+ALUSrc:  1
+RegWrite:0
+
+sw $a0, 4($sp):
+RegDst:  x
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:1
+ALUSrc:  1
+RegWrite:0
+
+addi $a0, $a0, -1:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+add $t0, $t0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+add $t1, $t0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+jal factorial:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+beq $a0, $zero, condicionBorde:
+RegDst:  x
+Jump:    0
+Branch:  1
+MemRead: 0
+MemToReg:x
+ALUOP1:  0
+ALUOP2:  1
+MemWrite:0
+ALUSrc:  0
+RegWrite:0
+
+addi $v0, $zero, 1:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+lw $ra, 0($sp):
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 1
+MemToReg:1
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+lw $a0, 4($sp):
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 1
+MemToReg:1
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+addi $sp, $sp, 4:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+addi $sp, $sp, 4:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+jr $ra:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+lw $ra, 0($sp):
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 1
+MemToReg:1
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+lw $a0, 4($sp):
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 1
+MemToReg:1
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+mul $v0, $v0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+addi $sp, $sp, 8:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+jr $ra:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+lw $ra, 0($sp):
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 1
+MemToReg:1
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+lw $a0, 4($sp):
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 1
+MemToReg:1
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+mul $v0, $v0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+addi $sp, $sp, 8:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+jr $ra:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+lw $ra, 0($sp):
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 1
+MemToReg:1
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+lw $a0, 4($sp):
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 1
+MemToReg:1
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+mul $v0, $v0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+addi $sp, $sp, 8:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+jr $ra:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+lw $ra, 0($sp):
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 1
+MemToReg:1
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+lw $a0, 4($sp):
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 1
+MemToReg:1
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+mul $v0, $v0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+addi $sp, $sp, 8:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+jr $ra:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+lw $ra, 0($sp):
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 1
+MemToReg:1
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+lw $a0, 4($sp):
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 1
+MemToReg:1
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+mul $v0, $v0, $a0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
+addi $sp, $sp, 8:
+RegDst:  0
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  0
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  1
+RegWrite:1
+
+jr $ra:
+RegDst:  x
+Jump:    1
+Branch:  x
+MemRead: 0
+MemToReg:x
+ALUOP1:  x
+ALUOP2:  x
+MemWrite:0
+ALUSrc:  x
+RegWrite:0
+
+add $s0, $zero, $v0:
+RegDst:  1
+Jump:    0
+Branch:  0
+MemRead: 0
+MemToReg:0
+ALUOP1:  1
+ALUOP2:  0
+MemWrite:0
+ALUSrc:  0
+RegWrite:1
+
