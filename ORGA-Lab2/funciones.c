@@ -327,83 +327,8 @@ Program* programInit(char *filename){
     loadIntructions(program,filename);
 	return program;
 }
-void iNULL(Instruction *in){
-	in->arguments = 3;
-	strcpy(in->function,"null");
-	strcpy(in->a1,"0");
-	strcpy(in->a2,"0");
-	strcpy(in->a3,"0");
-
-}
-int isNULL(Instruction in){
-	if (!strcmp(in.function,"null")){
-		return 1;
-	}
-	else{
-		return 0;
-	}
-}
-void loadInstruccionsBuffers(Program *program){
-	program->instBuffers[1]=program->ifid.in;
-	program->instBuffers[2]=program->idex.in;
-	program->instBuffers[3]=program->exmem.in;
-	program->instBuffers[4]=program->memwb.in;
-}
-void initIFID(IFID *ifid){
-	iNULL(&ifid->in);
-	memset(ifid->add_pc,0,30);
-}
-void initIDEX(IDEX *idex){
-	iNULL(&idex->in);
-	memset(idex->add_pc,0,30);
-	idex->aluSrc=0;
-    idex->aluOp=0;
-    idex->regDst=0;
-    idex->branch=0;
-    idex->memWrite=0;
-    idex->memRead=0;
-    idex->regWrite=0;
-    idex->memToReg=0;
-    idex->readData1=0;
-    idex->readData2=0;
-    idex->signExtend=0;
-    memset(idex->Rs,0,7);
-    memset(idex->Rt,0,7);
-    memset(idex->Rd,0,7);
-}
-
-void initEXMEM(EXMEM *exmem){
-	iNULL(&exmem->in);
-    exmem->branch=0;
-    exmem->memWrite=0;
-    exmem->memRead=0;
-    exmem->regWrite=0;
-    exmem->memToReg=0;
-    exmem->zero=0;
-    exmem->aluResult=0;
-    exmem->readData2=0;
-    exmem->addResult=0;
-    memset(exmem->muxRegDst,0,7);
-} 
-
-void initMEMWB(MEMWB *memwb){
-	iNULL(&exmem->in);
-    memwb->regWrite=0;
-    memwb->memToReg=0;
-    memwb->readData=0;
-    memwb->aluResult=0;
-    memset(memwb->muRegDst,0,7);
-}
-
-void initBuffersProgram(Program *program){
-	initIFID(&program->ifid);
-	initIDEX(&program->idex);
-	initEXMEM(&program->exmem);
-	initMEMWB(&program->memwb);
-}
 
 
-<<<<<<< HEAD
 void exProgram(Program* program,char* nameFileR, char* nameFileB){
 	program->ifid.in = program->instructions[0];
 	program->idex.in = program->instructions[1];
@@ -434,20 +359,5 @@ void exProgram(Program* program,char* nameFileR, char* nameFileB){
     //showInstruction(program->instructions[0]);
     //program->instBuffers[0]=program->instructions[0];
     //showInstruction(program->instBuffers[0]);
-=======
-void exProgram(Program* program,char* nameFileLC, char* nameFileT){
-	iNULL(&program->instructions[0]);
-    showInstruction(program->instructions[0]);
-    printf("es null: %d\n",isNULL(program->instructions[0]) );
-
-	int i;
-	for (i=0;i<program->counterInstruction;i++){
-		program->instBuffers[0] = program->instructions[i];
-		loadInstruccionsBuffers(program);
-	}
-
-    program->instBuffers[0]=program->instructions[0];
-    showInstruction(program->instBuffers[0]);
->>>>>>> 90455962ad4b5f40b2704a48493872aeccb3467b
 
 }
