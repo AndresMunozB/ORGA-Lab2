@@ -63,11 +63,11 @@ Program* programInit(char *filename);
 /*
  * Funcion exProgram
  * Funcion ejecuta un programa ya cargado
- * @param Program* program,char* nameFileLC, char* nameFileT, program es el programa que se va a ejecutar
-                            nameFileLC es el nombre del archivo de salida para las lineas de control de cada instruccion
-                            nameFileT es el nombre del archivo de salida para la traza de las instrucciones contenidas en el programa
+ * @param Program* program,char* nameFileR, char* nameFileB, program es el programa que se va a ejecutar
+                            nameFileR es el nombre del archivo de salida para las lineas de control de cada instruccion
+                            nameFileB es el nombre del archivo de salida para la traza de las instrucciones contenidas en el programa
 */
-void exProgram(Program* program,char* nameFileLC, char* nameFileT);
+void exProgram(Program* program,char* nameFileR, char* nameFileB);
 
 void nameRegistersInit(Program *program);
 void registersInit(Program *program);

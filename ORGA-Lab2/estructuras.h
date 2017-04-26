@@ -28,41 +28,41 @@ typedef struct IFID{
 typedef struct IDEX{
     Instruction in;
     char add_pc[30];
-    int aluSrc;
-    int aluOp;
-    int regDst;
-    int branch;
-    int memWrite;
-    int memRead;
-    int regWrite;
-    int memToReg;
-    int readData1;
-    int readData2;
-    int signExtend;
-    char Rs[7];
-    char Rt[7];
-    char Rd[7];
+    long aluSrc;
+    long aluOp;
+    long regDst;
+    long branch;
+    long memWrite;
+    long memRead;
+    long regWrite;
+    long memToReg;
+    long readData1;
+    long readData2;
+    long signExtend;
+    char rs[7];
+    char rt[7];
+    char rd[7];
 
 }IDEX;
 typedef struct EXMEM{
     Instruction in;
-    int branch;
-    int memWrite;
-    int memRead;
-    int regWrite;
-    int memToReg;
-    int zero;
-    int aluResult;
-    int readData2;
-    int addResult;
+    long branch;
+    long memWrite;
+    long memRead;
+    long regWrite;
+    long memToReg;
+    long zero;
+    long aluResult;
+    long readData2;
+    long addResult;
     char muxRegDst[7];
 }EXMEM;
 typedef struct MEMWB{
     Instruction in;
-    int regWrite;
-    int memToReg;
-    int readData;
-    int aluResult;
+    long regWrite;
+    long memToReg;
+    long readData;
+    long aluResult;
     char muRegDst[7];
 
 }MEMWB;

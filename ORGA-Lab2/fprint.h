@@ -26,8 +26,23 @@ void fprintLinesControl(FILE* archivo, Program* program);
 */
 void fprintTitle(FILE* archivo, Program* program);
 
+FILE* openFileHtml(char* namefile);
+void closeFileHtml(FILE* file);
 
-void fprintRegistersHtml(Program* program);
+void fprintNameRegistersHtml(FILE* file, Program* program);
+void fprintRegistersHtml(FILE* file,Program* program, int cycle);
+
+void fprintNameBuffersHtml(FILE* file);
+void fprintBuffersHtml(FILE* file, Program* program,int cycle);
+void fprintIFIDHtml(FILE* file, Program* program);
+void fprintIDEXHtml(FILE* file, Program* program);
+void fprintEXMEMHtml(FILE* file, Program* program);
+void fprintMEMWBHtml(FILE* file, Program* program);
+
+
+
+
+
 
 
 #endif // FPRINT_H_INCLUDED

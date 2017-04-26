@@ -63,7 +63,9 @@ int getIndexRegister(char *strRegister,Program* program ){
         }
     }
     return -1;
-}int getPClabel(char* label,Program* program){
+}
+
+int getPClabel(char* label,Program* program){
     int i;
     for (i=0;i<program->counterLabel;i++){
         //printf("%s-%s\n",program->labels[i].name,label);
@@ -209,35 +211,24 @@ void nameRegistersInit(Program *program){
 }
 
 void registersInit(Program *program,char *namefile){
-    int i;
+    /*int i;
     for (i=0;i<32;i++){
         program->registers[i]=0;
-    }
-    /*FILE *fileAux = fopen("fileAux.txt", "w");
-    FILE *file = fopen(namefile,"r");
-    char buffer[30];
+    }*/
+	FILE *file = fopen("inputRegistros.txt","r");
+    char registerStr[30];
     char valor[30];
-    long numero;
+    int indice;
     while (!feof(file)){
 
-        fscanf(file,"%s %s\n",buffer,valor);
-        //printf("%s:\n",buffer );
-        if(valor[0]=='0' && valor[1]=='x'){
-            fprintf(fileAux,"%s %s\n",buffer, valor);
-        }
+        fscanf(file,"%s %s\n",registerStr,valor);
+		indice = getIndexRegister(registerStr,program);
+		program->registers[indice] = strtol(valor,NULL,0);
+        //printf("%s %ld\n",registerStr, strtol(valor,NULL,0));
 
 
     }
-    fclose(fileAux);
-    fileAux = fopen("fileAux.txt", "r");
-    while (!feof(fileAux)){
-        fscanf(fileAux,"%s %lX",buffer,&numero);
-        printf("%s %s\n",buffer,valor);
-        printf("HOLA: %08x, %li\n",numero,numero );
-
-    }
-    fclose(fileAux);
-    fclose(file);*/
+    fclose(file);
 }
 
 void loadIntructions(Program *program,char *filename){
@@ -338,9 +329,35 @@ Program* programInit(char *filename){
 }
 
 
-void exProgram(Program* program,char* nameFileLC, char* nameFileT){
-    showInstruction(program->instructions[0]);
-    program->instBuffers[0]=program->instructions[0];
-    showInstruction(program->instBuffers[0]);
+void exProgram(Program* program,char* nameFileR, char* nameFileB){
+	program->ifid.in = program->instructions[0];
+	program->idex.in = program->instructions[1];
+	program->exmem.in = program->instructions[2];
+	program->memwb.in = program->instructions[3];
+
+	FILE* file_registros = openFileHtml(nameFileR);
+	FILE* file_buffers = openFileHtml(nameFileB);
+
+
+
+	//PARA LOS REGISTROS:
+	fprintNameRegistersHtml(file_registros,program);
+	fprintRegistersHtml(file_registros,program,1);
+	fprintRegistersHtml(file_registros,program,2);
+	fprintRegistersHtml(file_registros,program,3);
+	fprintRegistersHtml(file_registros,program,4);
+
+	//PARA LOS BUFFERS:
+	fprintNameBuffersHtml(file_buffers);
+	fprintBuffersHtml(file_buffers,program,1);
+	fprintBuffersHtml(file_buffers,program,2);
+	fprintBuffersHtml(file_buffers,program,3);
+	fprintBuffersHtml(file_buffers,program,4);
+
+	closeFileHtml(file_registros);
+	closeFileHtml(file_buffers);
+    //showInstruction(program->instructions[0]);
+    //program->instBuffers[0]=program->instructions[0];
+    //showInstruction(program->instBuffers[0]);
 
 }

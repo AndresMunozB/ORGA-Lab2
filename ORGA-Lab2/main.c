@@ -16,7 +16,9 @@ int main(){
 	char nameFileR[250];
 	char nameFileB[250];
 	char option[250];
-    do{
+    program = (Program*) programInit("inputCode.asm");
+    exProgram(program,"registrosHTML.html","buffersHTML.html");
+    /*do{
 		printf("         MENU\n");
 		printf("1) Ejecutar programa.\n");
 		printf("2) Salir\n" );
@@ -56,7 +58,7 @@ int main(){
 
 		}
 
-    }while(strcmp(option,"2"));
+    }while(strcmp(option,"2"));*/
 
     return 0;
 
