@@ -10,23 +10,19 @@ typedef struct Instruction{
 
 }Instruction;
 
-
-
 typedef struct Label{
 	char name[30];
 	int PC;
 }Label;
-
-
+/*
 typedef struct IFID{
-    Instruction in;
+    Instruction instruction;
     char add_pc[30];
 
 }IFID;
 
-
 typedef struct IDEX{
-    Instruction in;
+    Instruction instruction;
     char add_pc[30];
     long aluSrc;
     long aluOp;
@@ -44,8 +40,9 @@ typedef struct IDEX{
     char rd[7];
 
 }IDEX;
+
 typedef struct EXMEM{
-    Instruction in;
+    Instruction instruction;
     long branch;
     long memWrite;
     long memRead;
@@ -57,8 +54,9 @@ typedef struct EXMEM{
     long addResult;
     char muxRegDst[7];
 }EXMEM;
+
 typedef struct MEMWB{
-    Instruction in;
+    Instruction instruction;
     long regWrite;
     long memToReg;
     long readData;
@@ -66,26 +64,45 @@ typedef struct MEMWB{
     char muRegDst[7];
 
 }MEMWB;
+*/
+typedef struct Buffer{
+	Instruction instruction;
+	char linesControl[10];
+	long add_pc;
+
+    long readData1;
+    long readData2;
+    long signExtend;
+    char rs[7];
+    char rt[7];
+    char rd[7];
+	long zero;
+    long aluResult;
+    long addResult;
+    char muxRegDst[7];
+	long readData;
+}Buffer;
+
 typedef struct Program{
 
 	int PC;
 	int counterInstruction;
 	int counterLabel;
 	long registers[32];
+	long registersCpy[32];
 	int heapMemory[100000];
 	int stackMemory[100000];
 	char linesControl[10];
 	char nameRegisters[32][7];
 	Instruction instructions[100000];
 	Label labels[50000];
-    IFID ifid;
+    /*IFID ifid;
     IDEX idex;
     EXMEM exmem;
-    MEMWB memwb;
-    Instruction instBuffers[5];
+    MEMWB memwb;*/
+    Instruction instructionsSteps[5];
+	Buffer buffers[4];
 }Program;
-
-
 
 
 #endif

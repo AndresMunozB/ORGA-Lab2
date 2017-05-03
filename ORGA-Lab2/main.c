@@ -17,7 +17,11 @@ int main(){
 	char nameFileB[250];
 	char option[250];
     program = (Program*) programInit("inputCode.asm");
+    //showLabels(program);
+    //showInstruction(program->instructions[1]);
     exProgram(program,"registrosHTML.html","buffersHTML.html");
+    //printf("valor final: %d\n",program->heapMemory[346] );
+    //printf("valor final: %d\n",program->stackMemory[750] );
     /*do{
 		printf("         MENU\n");
 		printf("1) Ejecutar programa.\n");

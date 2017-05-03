@@ -53,6 +53,9 @@ int getPClabel(char* label,Program* program);
  * @param Instruction in,Program* program, instruccion para cambiar las lineas de control del programa
 */
 void setLinesControl(Instruction in,Program* program);
+void nameRegistersInit(Program *program);
+void registersInit(Program *program);
+void loadInstructions(Program *program,char *filename);
 /*
  * Funcion existFile
  * Funcion que inicializa una estructura program y retorna la direccion de momoria
@@ -60,6 +63,7 @@ void setLinesControl(Instruction in,Program* program);
  * @return direccion de memoria de una estructura Program inicializada
 */
 Program* programInit(char *filename);
+void exInstruction(Instruction instruction,Program *program,int step);
 /*
  * Funcion exProgram
  * Funcion ejecuta un programa ya cargado
@@ -69,9 +73,10 @@ Program* programInit(char *filename);
 */
 void exProgram(Program* program,char* nameFileR, char* nameFileB);
 
-void nameRegistersInit(Program *program);
-void registersInit(Program *program);
-void loadIntructions(Program *program,char *filename);
+void updateBufferIF(Instruction in,Program *program);
+void resetBuffer(Buffer *buffer);
+void resetInstruction(Instruction *in);
+
 
 
 #endif
