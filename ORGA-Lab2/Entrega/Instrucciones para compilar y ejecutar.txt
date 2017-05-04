@@ -1,0 +1,8 @@
+Para compilar en windows:
+	mingw32-make
+Para compilar en linux:
+	make
+Para ejecutar en windows:
+	programa
+Para ejecutar en linux:
+	./programa
