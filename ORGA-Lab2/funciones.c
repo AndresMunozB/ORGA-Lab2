@@ -4,8 +4,9 @@
 #include "estructuras.h"
 #include "mips.h"
 #include "fprint.h"
-
-
+/*
+ * Funcion existsFile
+*/
 int existsFile(char* filename) {
 	FILE* f = NULL;
 	f = fopen(filename,"r");
@@ -18,6 +19,9 @@ int existsFile(char* filename) {
 	return 0;
 }
 
+/*
+ * Funcion showInstruction
+*/
 void showInstruction(Instruction instruction){
     if (instruction.arguments == 3){
 		printf("%s %s %s %s\n",instruction.function,instruction.a1,instruction.a2,instruction.a3 );
@@ -33,6 +37,9 @@ void showInstruction(Instruction instruction){
 	}
 }
 
+/*
+ * Funcion showRegisters
+*/
 void showRegisters(Program* program){
     int i;
     for (i=0;i<32;i++){
@@ -40,6 +47,9 @@ void showRegisters(Program* program){
     }
 }
 
+/*
+ * Funcion showLabels
+*/
 void showLabels(Program* program){
     int i;
     for (i=0;i<program->counterLabel;i++){
@@ -48,6 +58,9 @@ void showLabels(Program* program){
     }
 }
 
+/*
+ * Funcion instructionInit
+*/
 void instructionInit(Instruction* ins){
 	memset(ins->function,0,30);
 	memset(ins->a1,0,30);
@@ -55,23 +68,25 @@ void instructionInit(Instruction* ins){
 	memset(ins->a3,0,30);
 }
 
+/*
+ * Funcion getIndexRegister
+*/
 int getIndexRegister(char *strRegister,Program* program ){
-    //printf("Entrada:%s:\n",strRegister);
     int i;
     for (i=0;i<32;i++){
-        //printf("%s:\n",program->nameRegisters[i]);
         if (!strcmp(program->nameRegisters[i],strRegister)){
-                //printf("ENTRE IF: %d\n",i);
             return i;
         }
     }
     return 0;
 }
 
+/*
+ * Funcion getPClabel
+*/
 int getPClabel(char* label,Program* program){
     int i;
     for (i=0;i<program->counterLabel;i++){
-        //printf("%s-%s\n",program->labels[i].name,label);
         if (! strcmp(program->labels[i].name, label)){
         	return program->labels[i].PC;
         }
@@ -79,6 +94,9 @@ int getPClabel(char* label,Program* program){
     return -1;
 }
 
+/*
+ * Funcion setLinesControl
+*/
 void setLinesControl(Instruction in,Program* program){
      if (
 		!strcmp(in.function,"add") ||
@@ -177,8 +195,6 @@ void setLinesControl(Instruction in,Program* program){
 
     }
 	else if((!strcmp(in.function,"Empty")) || (!strcmp(in.function,"NOP"))) {
-
-
 		program->linesControl[0]='0';
 		program->linesControl[1]='0';
 		program->linesControl[2]='0';
@@ -192,6 +208,9 @@ void setLinesControl(Instruction in,Program* program){
 	}
 }
 
+/*
+ * Funcion nameRegistersInit
+*/
 void nameRegistersInit(Program *program){
     strcpy(program->nameRegisters[0],"$zero");
 	strcpy(program->nameRegisters[1],"$at");
@@ -227,12 +246,12 @@ void nameRegistersInit(Program *program){
 	strcpy(program->nameRegisters[31],"$ra");
 }
 
+/*
+ * Funcion initRegisters
+*/
 void initRegisters(Program *program,char *namefile){
-    /*int i;
-    for (i=0;i<32;i++){
-        program->registers[i]=0;
-    }*/
-	FILE *file = fopen("inputRegistros.txt","r");
+	//Pasar esto para que el usuario ingrese el nombre del archivo
+	FILE *file = fopen(namefile,"r");
     char registerStr[30];
     char valor[30];
     int indice;
@@ -241,19 +260,23 @@ void initRegisters(Program *program,char *namefile){
         fscanf(file,"%s %s\n",registerStr,valor);
 		indice = getIndexRegister(registerStr,program);
 		program->registers[indice] = strtol(valor,NULL,0);
-        //printf("%s %ld\n",registerStr, strtol(valor,NULL,0));
-
-
     }
     fclose(file);
 }
-void resetInstructionNop(Instruction *in){
-	in->arguments = 0;
-	strcpy(in->function , "NOP");
-	strcpy(in->a1 , "");
-	strcpy(in->a2 , "");
-	strcpy(in->a3 , "");
+
+/*
+ * Funcion upRegisters
+*/
+void upRegisters(Program *program){
+	int reg;
+	for (reg=0;reg<32;reg++){
+		program->registersCpy[reg] = program->registers[reg];
+	}
 }
+
+/*
+ * Funcion resetInstruction
+*/
 void resetInstruction(Instruction *in){
 	in->arguments = 0;
 	strcpy(in->function , "Empty");
@@ -261,18 +284,30 @@ void resetInstruction(Instruction *in){
 	strcpy(in->a2 , "");
 	strcpy(in->a3 , "");
 }
+
+/*
+ * Funcion resetInstructionsProgram
+*/
 void resetInstructionsProgram(Program *program){
 	int i;
 	for (i=0;i<100000;i++){
 		resetInstruction(&program->instructions[i]);
 	}
 }
+
+/*
+ * Funcion resetInstructionStepsProgram
+*/
 void resetInstructionStepsProgram(Program *program){
 	int i;
 	for (i=0;i<5;i++){
 		resetInstruction(&program->instructionsSteps[i]);
 	}
 }
+
+/*
+ * Funcion resetInstructionsBuffers
+*/
 void resetInstructionsBuffers(Program *program){
 	resetInstruction(&program->buffers[0].instruction);
 	resetInstruction(&program->buffers[1].instruction);
@@ -281,12 +316,18 @@ void resetInstructionsBuffers(Program *program){
 
 }
 
+/*
+ * Funcion resetAllInstructions
+*/
 void resetAllInstructions(Program *program){
 	resetInstructionsProgram(program);
 	resetInstructionStepsProgram(program);
 	resetInstructionsBuffers(program);
 }
 
+/*
+ * Funcion loadInstructions
+*/
 void loadInstructions(Program *program,char *filename){
     FILE* file;
 	file = fopen(filename,"r");
@@ -296,7 +337,6 @@ void loadInstructions(Program *program,char *filename){
 		memset(buffer,0,sizeof(buffer));
 
 		fscanf(file,"%s",buffer);
-		//printf("%s\n",buffer );
 		if (
 		!strcmp(buffer,"add") ||
 		!strcmp(buffer,"addi") ||
@@ -312,11 +352,7 @@ void loadInstructions(Program *program,char *filename){
 			strcpy(program->instructions[program->counterInstruction].function , buffer);
 			fscanf(file," %[^','], %[^','], %s\n",program->instructions[program->counterInstruction].a1,program->instructions[program->counterInstruction].a2,program->instructions[program->counterInstruction].a3);
 			program->instructions[program->counterInstruction].arguments = 3;
-			//showInstruction(program->instructions[program->counterInstruction]);
-
 			program->counterInstruction++;
-			//printf("%d\n",program->counterInstruction);
-
 		}
 		else if (
 		!strcmp(buffer,"lw") ||
@@ -326,8 +362,6 @@ void loadInstructions(Program *program,char *filename){
 			strcpy(program->instructions[program->counterInstruction].function , buffer);
 			fscanf(file," %[^','], %[^'('](%[^')']",program->instructions[program->counterInstruction].a1,program->instructions[program->counterInstruction].a2,program->instructions[program->counterInstruction].a3);
 			program->instructions[program->counterInstruction].arguments = 3;
-			//showInstruction(program->instructions[program->counterInstruction]);
-
 			program->counterInstruction++;
 
 		}
@@ -338,8 +372,6 @@ void loadInstructions(Program *program,char *filename){
 			strcpy(program->instructions[program->counterInstruction].function , buffer);
 			fscanf(file," %[^','], (%[^')']",program->instructions[program->counterInstruction].a1,program->instructions[program->counterInstruction].a2);
 			program->instructions[program->counterInstruction].arguments = 2;
-			//showInstruction(program->instructions[program->counterInstruction]);
-
 			program->counterInstruction++;
 
 		}
@@ -352,26 +384,20 @@ void loadInstructions(Program *program,char *filename){
 			strcpy(program->instructions[program->counterInstruction].function , buffer);
 			fscanf(file," %s\n",program->instructions[program->counterInstruction].a1);
 			program->instructions[program->counterInstruction].arguments = 1;
-			//showInstruction(program->instructions[program->counterInstruction]);
-
 			program->counterInstruction++;
-
 		}
-
 		else if (buffer[strlen(buffer)-1] == ':'){
-			//printf("%s largo:%d\n", buffer,program->counterInstruction);
-			//printf("%s\n", buffer);
 			buffer[strlen(buffer)-1] = '\0';
 			strcpy(program->labels[program->counterLabel].name,buffer);
 			program->labels[program->counterLabel].PC = program->counterInstruction;
 			program->counterLabel++;
-			//printf("%d\n",program->counterLabel);
-
-
 		}
     }
 }
 
+/*
+ * Funcion resetBuffer
+*/
 void resetBuffer(Buffer *buffer){
 
 	resetInstruction(&buffer->instruction);
@@ -394,28 +420,39 @@ void resetBuffer(Buffer *buffer){
 	strcpy(buffer->muxRegDst,"");
 
 }
+
+/*
+ * Funcion initBuffers
+*/
 void initBuffers(Program *program){
-	int i,j;
+	int i;
 	for (i=0;i<4;i++){
 		resetBuffer(&program->buffers[i]);
 	}
 }
 
-Program* programInit(char *filename){
+/*
+ * Funcion programInit
+*/
+Program* programInit(char *filename,char *fileName2){
 	Program *program=(Program*)malloc(sizeof(Program));
 	program->PC=0;
 	program->counterInstruction=0;
 	program->counterLabel=0;
 	resetAllInstructions(program);
 	nameRegistersInit(program);
-    initRegisters(program,"inputRegistros.txt");
+    initRegisters(program,fileName2);
     loadInstructions(program,filename);
 	initBuffers(program);
+	upRegisters(program);
 
 
 	return program;
 }
 
+/*
+ * Funcion exInstruction
+*/
 void exInstruction(Instruction instruction,Program *program,int step){
 		if(!strcmp(instruction.function,"add")){
             add(instruction,program,step);
@@ -470,7 +507,9 @@ void exInstruction(Instruction instruction,Program *program,int step){
 
 }
 
-
+/*
+ * Funcion checkEmptysInstructionsBuffers
+*/
 int checkEmptysInstructionsBuffers(Program *program){
 	int i;
 	for (i=0;i<4;i++){
@@ -481,6 +520,10 @@ int checkEmptysInstructionsBuffers(Program *program){
 	}
 	return 1;
 }
+
+/*
+ * Funcion updateBufferIF
+*/
 void updateBufferIF(Instruction in,Program *program){
 	resetBuffer(&program->buffers[0]);
 	program->PC++;
@@ -492,243 +535,16 @@ void updateBufferIF(Instruction in,Program *program){
 	}
 	program->buffers[0].add_pc = program->PC*4;
 }
-void functionIF(Instruction in,Program *program){
-	resetBuffer(&program->buffers[0]);
-	program->PC++;
-	program->buffers[0].instruction = in;
-	setLinesControl(in,program);
-	int i;
-	for (i=0;i<10;i++){
-		program->buffers[0].linesControl[i] = program->linesControl[i];
-	}
-	program->buffers[0].add_pc = program->PC*4;
 
-
-	//Listo
-	if (
-	   !strcmp(in.function,"add") ||
-	   !strcmp(in.function,"sub") ||
-	   !strcmp(in.function,"mul") ||
-	   !strcmp(in.function,"div")
-	   ){
-			strcpy(program->buffers[0].rs,in.a2);
-   			strcpy(program->buffers[0].rt,in.a3);
-   			strcpy(program->buffers[0].rd,in.a1);
-   			strcpy(program->buffers[0].muxRegDst,in.a1);
-   }
-   //Listo
-   else if(
-	   !strcmp(in.function,"addi") ||
-		   !strcmp(in.function,"subi")){
-			strcpy(program->buffers[0].rs,in.a2);
-   			strcpy(program->buffers[0].rt,in.a1);
-   			strcpy(program->buffers[0].rd,"");
-   			program->buffers[0].signExtend=atoi(in.a3);
-			strcpy(program->buffers[0].muxRegDst,in.a1);
-
-   }
-   //Nose si listo
-   else if(
-	   !strcmp(in.function,"beq") ||
-	   !strcmp(in.function,"blt") ||
-	   !strcmp(in.function,"bgt")){
-			strcpy(program->buffers[0].rs,in.a1);
-   			strcpy(program->buffers[0].rt,in.a2);
-   			program->buffers[0].signExtend = getPClabel(in.a3,program);
-
-
-   }
-   //Nose si listo
-   else if (
-	   !strcmp(in.function,"j") ||
-	   !strcmp(in.function,"jal")
-
-	   ){
-		   strcpy( program->buffers[0].rt, "$ra");
-		   strcpy( program->buffers[0].muxRegDst, "$ra");
-		   //program->buffers[0].muxRegDst = "$ra";
-		   program->buffers[0].signExtend = getPClabel(in.a1,program);
-
-		   //TRUCO
-		   int aux = program->PC;
-		   program->PC=getPClabel(in.a1,program);
-		   if (!strcmp(in.function,"jal")){
-
-			   program->registers[getIndexRegister("$ra",program)] = aux;
-		   }
-           //program->PC-=1;
-
-
-
-   }
-   else if (!strcmp(in.function,"jr")){
-	   		strcpy(program->buffers[0].rt,in.a1);
-			strcpy(program->buffers[0].muxRegDst,in.a1);
-   }
-   else if (
-	   !strcmp(in.function,"lw") ||
-	   !strcmp(in.function,"la")
-	   ){
-
-			strcpy(program->buffers[0].rs,in.a3);
-   			strcpy(program->buffers[0].rt,in.a1);
-   			program->buffers[0].signExtend = atoi(in.a2);
-			strcpy(program->buffers[0].muxRegDst,in.a1);
-
-   }
-   else if (
-	   !strcmp(in.function,"sw")
-	   ){
-			strcpy(program->buffers[0].rs,in.a3);
-   			strcpy(program->buffers[0].rt,in.a1);
-			program->buffers[0].signExtend = atoi(in.a2);
-			strcpy(program->buffers[0].muxRegDst,in.a1);
-
-
-   }
-   else if((!strcmp(in.function,"Empty")) || (!strcmp(in.function,"NOP"))) {
-	   	strcpy(program->buffers[0].rs,"");
-		strcpy(program->buffers[0].rt,"");
-		strcpy(program->buffers[0].rd,"");
-		strcpy(program->buffers[0].muxRegDst,"");
-   }
-
-
-}
-void functionID(Program *program){
-	//printf("hola\n" );
-	program->buffers[1] = program->buffers[0];
-	if (!strcmp(program->buffers[1].instruction.function,"jr")){
-		printf("hola\n" );
-		int index;
-		index = getIndexRegister(program->buffers[1].rt,program);
-		program->PC=program->registers[index];
-		printf("pc: %d\n",program->PC );
-	}
-	else if (program->buffers[1].linesControl[1] == '1'){
-		program->PC=getPClabel(program->buffers[1].instruction.a1,program);
-	}
-
-	/*
-	printf("%s\n", program->buffers[1].instruction.function);
-	program->buffers[1].readData1 = program->registers[getIndexRegister(program->buffers[1].rs,program)];
-	program->buffers[1].readData2 = program->registers[getIndexRegister(program->buffers[1].rt,program)];
-	*/
-	program->buffers[1].readData1 = program->registers[getIndexRegister(program->buffers[1].rs,program)];
-	program->buffers[1].readData2 = program->registers[getIndexRegister(program->buffers[1].rt,program)];
-}
-void functionEX(Program *program){
-	program->buffers[2] = program->buffers[1];
-
-	if (!strcmp(program->buffers[2].instruction.function,"add") ){
-		program->buffers[2].aluResult = program->buffers[2].readData1 + program->buffers[2].readData2;
-	}
-	else if (!strcmp(program->buffers[2].instruction.function,"sub") ){
-		program->buffers[2].aluResult = program->buffers[2].readData1 - program->buffers[2].readData2;
-	}
-	else if (!strcmp(program->buffers[2].instruction.function,"mul") ){
-		program->buffers[2].aluResult = program->buffers[2].readData1 * program->buffers[2].readData2;
-	}
-	else if (!strcmp(program->buffers[2].instruction.function,"div") ){
-		program->buffers[2].aluResult = program->buffers[2].readData1 / program->buffers[2].readData2;
-	}
-	else if (!strcmp(program->buffers[2].instruction.function,"addi") ){
-		printf("pc: %d\n",program->PC );
-		showInstruction(program->buffers[2].instruction);
-		printf("addi\n");
-		program->buffers[2].aluResult = program->buffers[2].readData1 + program->buffers[2].signExtend;
-	}
-
-	else if (!strcmp(program->buffers[2].instruction.function,"subi") ){
-		//printf("addii\n" );
-		program->buffers[2].aluResult = program->buffers[2].readData1 - program->buffers[2].signExtend;
-	}
-	else if (!strcmp(program->buffers[2].instruction.function,"sw") ){
-		program->buffers[2].aluResult = program->buffers[2].readData2 + program->buffers[2].signExtend;
-	}
-	else if (!strcmp(program->buffers[2].instruction.function,"lw") ){
-		program->buffers[2].aluResult = program->buffers[2].readData2 + program->buffers[2].signExtend;
-	}
-
-}
-void functionMEM(Program *program){
-	program->buffers[3] = program->buffers[2];
-	int dir, offset, index;
-	if (program->buffers[3].linesControl[7] == '1'){
-		if(!strcmp(program->buffers[3].rs,"$sp")){
-			dir = program->buffers[3].aluResult/4;
-			index = getIndexRegister(program->buffers[3].muxRegDst,program);
-            program->stackMemory[dir]= program->registers[index];
-			printf("Valor: %d\n", program->stackMemory[dir]);
-			printf("dir: %d\n",dir );
-
-        }
-        else{
-			dir = program->buffers[3].aluResult/4;
-			index = getIndexRegister(program->buffers[3].muxRegDst,program);
-            program->heapMemory[dir]= program->registers[index];
-			printf("valor heap: %d\n", program->heapMemory[dir] );
-			printf("dir: %d\n",dir );
-		}
-	}
-	if (program->buffers[3].linesControl[3] == '1'){
-		if(!strcmp(program->buffers[3].rs,"$sp")){
-			dir = program->buffers[3].aluResult/4;
-			index = getIndexRegister(program->buffers[3].muxRegDst,program);
-            program->buffers[3].readData = program->stackMemory[dir];
-			showInstruction(program->buffers[3].instruction);
-			printf("lw valor read data sp: %d\n",program->buffers[3].readData  );
-			printf("lw dir: %d\n",dir );
-        }
-        else{
-			dir = program->buffers[3].aluResult/4;
-			index = getIndexRegister(program->buffers[3].muxRegDst,program);
-            program->buffers[3].readData = program->heapMemory[dir];
-			printf("lw valor read data heap: %d\n",program->buffers[3].readData  );
-
-			printf("lw dir: %d\n",dir );
-        }
-	}
-	if (!strcmp(program->buffers[3].instruction.function,"beq")){
-		if(program->registers[getIndexRegister(program->buffers[3].instruction.a1,program)]== program->registers[getIndexRegister(program->buffers[3].instruction.a2,program)] ){
-            program->PC=getPClabel(program->buffers[3].instruction.a3,program);
-			printf("necesita un flush %d\n",program->PC );
-			int i;
-			for (i=0;i<3;i++){
-				resetBuffer(&program->buffers[i]);
-				printf("holaa123\n" );
-			}
-			//program->registers[29]+=8;
-        }
-	}
-
-}
-
-void functionWB(Program *program){
-	int index;
-	if (program->buffers[3].linesControl[9] == '1'){
-		if (program->buffers[3].linesControl[4] == '0'){
-			index = getIndexRegister(program->buffers[3].muxRegDst,program);
-			program->registers[index] =  program->buffers[3].aluResult;
-		}
-		else if (program->buffers[3].linesControl[4] == '1'){
-			index = getIndexRegister(program->buffers[3].muxRegDst,program);
-			program->registers[index] = program->buffers[3].readData;
-		}
-	}
-	/*if(!strcmp(program->buffers[3].instruction.function,"jal")) {
-		index = getIndexRegister(program->buffers[3].muxRegDst,program);
-		program->registers[index] =  program->buffers[3].signExtend;
-	}*/
-}
-
+/*
+ * Funcion fordwarding
+*/
 void fordwarding(Program *program){
 
 	if ((program->buffers[2].linesControl[9] == '1')
 		&& (strcmp(program->buffers[2].muxRegDst,"$zero"))
 		&& (!strcmp(program->buffers[2].muxRegDst,program->buffers[1].rs))
 		){
-			//printf("entre al forwarding  ex/mem rs\n" );
 			program->buffers[1].readData1 = program->buffers[2].aluResult;
 
 	}
@@ -736,20 +552,14 @@ void fordwarding(Program *program){
 		&& (strcmp(program->buffers[2].muxRegDst,"$zero"))
 		&& (!strcmp(program->buffers[2].muxRegDst,program->buffers[1].rt))
 		){
-			//printf("entre al forwarding ex/mem rt\n" );
 			program->buffers[1].readData2 = program->buffers[2].aluResult;
 	}
 
 	if (program->buffers[3].linesControl[9] == '1' //regWrite
-	 //memRead
 		&& strcmp(program->buffers[3].muxRegDst,"$zero")
 		&& !strcmp(program->buffers[3].muxRegDst,program->buffers[1].rs)
 	){
 		if(program->buffers[3].linesControl[3] == '1' ){
-
-			//printf("entre al forwarding  mem/wb rs\n" );
-			//printf("rd1[1]: %d\n",	program->buffers[1].readData1 );
-			//printf("rd[3]: %d\n",	program->buffers[3].readData );
 			program->buffers[1].readData1 = program->buffers[3].readData;
 		}
 		else{
@@ -762,10 +572,6 @@ void fordwarding(Program *program){
 		&& !strcmp(program->buffers[3].muxRegDst,program->buffers[1].rt)
 	){
 		if(program->buffers[3].linesControl[3] == '1'){
-
-			//printf("entre al forwarding mem/wb rt\n" );
-			//printf("rd2[1]: %d\n",	program->buffers[1].readData2 );
-			//printf("rd[3]: %d\n",	program->buffers[3].readData );
 			program->buffers[1].readData2 = program->buffers[3].readData;
 		}
 		else{
@@ -774,29 +580,26 @@ void fordwarding(Program *program){
 	}
 }
 
+/*
+ * Funcion is_nop
+*/
 int is_nop(Program *program){
-	/*
-	if (ID/EX.MemRead=1)
-	and ((ID/EX.Rt=IF/ID.Rs)
-	or (ID/EX.Rt=IF/ID.Rt))
-	stall the pipeline
-
-	*/
 
 	if(program->buffers[1].linesControl[3] == '1' &&
 	strcmp(program->buffers[1].instruction.function,"Empty") &&
 	(!strcmp(program->buffers[1].rt,program->buffers[0].rs) ||
 	(!strcmp(program->buffers[1].rt,program->buffers[0].rt)))
 	){
-		//printf("rt-rs: %s,%s\n",program->buffers[1].rt,program->buffers[0].rs );
-		//printf("rt-rt: %s,%s\n",program->buffers[1].rt,program->buffers[0].rt );
-		//printf("Agregar una espera\n" );
 		return 1;
 	}
 	else{
 		return 0;
 	}
 }
+
+/*
+ * Funcion loadInstructionsSteps
+*/
 void loadInstructionsSteps(Instruction in, Program *program){
 	program->instructionsSteps[4] = program->instructionsSteps[3];
 	program->instructionsSteps[3] = program->instructionsSteps[2];
@@ -804,14 +607,10 @@ void loadInstructionsSteps(Instruction in, Program *program){
 	program->instructionsSteps[1] = program->instructionsSteps[0];
 	program->instructionsSteps[0] = in;
 }
-void upRegisters(Program *program){
-	int reg;
-	for (reg=0;reg<32;reg++){
-		program->registersCpy[reg] = program->registers[reg];
-	}
-}
 
-
+/*
+ * Funcion exProgram
+*/
 void exProgram(Program* program,char* nameFileR, char* nameFileB){
 	//Abre los archivos y los rellena con el codigo base para html
 	FILE* file_buffers = openFileHtml(nameFileB);
@@ -820,18 +619,10 @@ void exProgram(Program* program,char* nameFileR, char* nameFileB){
 	fprintNameRegistersHtml(file_registros,program);
 	//fin de agregar el codigo base de html
 	upRegisters(program);
-
 	int  cycle = 1;
 	do{
-		//revisarhazar();
 		//fprintBuffersHtml(file_buffers,program,cycle);
-		//printf("cycle: %d\n",cycle  );
 		fordwarding(program);
-		int i;
-		/*for (i=0;i<5;i++){
-			showInstruction(program->instructionsSteps[i]);
-		}*/
-		//printf("valor stack 750: %d\n",program->stackMemory[750] );
 		loadInstructionsSteps(program->instructions[program->PC], program);
 		exInstruction(program->instructionsSteps[4],program,4);
 		exInstruction(program->instructionsSteps[3],program,3);
@@ -848,47 +639,7 @@ void exProgram(Program* program,char* nameFileR, char* nameFileB){
 		fprintRegistersHtml(file_registros,program,cycle);
 		upRegisters(program);
 		cycle++;
-		//program->PC++;
 	}while(!checkEmptysInstructionsBuffers(program));
-	/*int i=0;
-	for (program->PC=0;program->PC<program->counterInstruction;program->PC++){
-		fprintBuffersHtml(file_buffers,program,i);
-
-		loadInstructionsSteps(program->instructions[program->PC], program);
-		int step;
-
-		for (step=0;step<5;step++){
-			printf("\n\nEtapa: %d\n",step);
-			showInstruction(program->instructionsSteps[step]);
-			exInstruction(program->instructionsSteps[step],program,step);
-		}
-		i++;
-	}*/
 	closeFileHtml(file_buffers);
 	closeFileHtml(file_registros);
-	/*program->ifid.in = program->instructions[0];
-	program->idex.in = program->instructions[1];
-	program->exmem.in = program->instructions[2];
-	program->memwb.in = program->instructions[3];
-
-	FILE* file_registros = openFileHtml(nameFileR);
-	FILE* file_buffers = openFileHtml(nameFileB);
-
-	//PARA LOS REGISTROS:
-	fprintNameRegistersHtml(file_registros,program);
-	fprintRegistersHtml(file_registros,program,1);
-	fprintRegistersHtml(file_registros,program,2);
-	fprintRegistersHtml(file_registros,program,3);
-	fprintRegistersHtml(file_registros,program,4);
-
-	//PARA LOS BUFFERS:
-	fprintNameBuffersHtml(file_buffers);
-	fprintBuffersHtml(file_buffers,program,1);
-	fprintBuffersHtml(file_buffers,program,2);
-	fprintBuffersHtml(file_buffers,program,3);
-	fprintBuffersHtml(file_buffers,program,4);
-
-	closeFileHtml(file_registros);
-	closeFileHtml(file_buffers);*/
-
 }

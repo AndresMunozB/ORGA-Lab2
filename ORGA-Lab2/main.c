@@ -13,16 +13,15 @@ int main(){
 
     Program* program;
 	char nameFileEntrada[250];
+    char nameFileEntradaReg[250];
 	char nameFileR[250];
 	char nameFileB[250];
 	char option[250];
-    program = (Program*) programInit("inputCode.asm");
-    //showLabels(program);
-    //showInstruction(program->instructions[1]);
-    exProgram(program,"registrosHTML.html","buffersHTML.html");
+    //program = (Program*) programInit("inputCode.asm");
+    //exProgram(program,"registrosHTML.html","buffersHTML.html");
     //printf("valor final: %d\n",program->heapMemory[346] );
     //printf("valor final: %d\n",program->stackMemory[750] );
-    /*do{
+    do{
 		printf("         MENU\n");
 		printf("1) Ejecutar programa.\n");
 		printf("2) Salir\n" );
@@ -33,9 +32,14 @@ int main(){
 		if (!strcmp(option,"1")){
 
             memset(nameFileEntrada,0,sizeof(nameFileEntrada));
-            printf("Ingrese el nombre del archivo de entrada: ");
+            printf("Ingrese el nombre del archivo de entrada del codigo mips: ");
             fflush(stdin);
             scanf("%s", nameFileEntrada);
+
+            memset(nameFileEntradaReg,0,sizeof(nameFileEntrada));
+            printf("Ingrese el nombre del archivo de entrada de registros: ");
+            fflush(stdin);
+            scanf("%s", nameFileEntradaReg);
 
             memset(nameFileR,0,sizeof(nameFileR));
             printf("Ingrese el nombre del archivo de salida para la traza de los registros: ");
@@ -47,7 +51,7 @@ int main(){
             fflush(stdin);
             scanf("%s", nameFileB);
 
-            if (existsFile(nameFileEntrada) && strcmp(nameFileR,nameFileB)){
+            if (existsFile(nameFileEntrada) && existsFile(nameFileEntrada) && strcmp(nameFileR,nameFileB)){
                 program = (Program*) programInit(nameFileEntrada);
                 //fprintRegistersHtml(program);
                 exProgram(program,nameFileR,nameFileB);
@@ -57,12 +61,12 @@ int main(){
             }
 
             else{
-                    printf("El archivo de entrada no existe\n\n");
+                    printf("Uno de los archivos de entrada no existe\n\n");
             }
 
 		}
 
-    }while(strcmp(option,"2"));*/
+    }while(strcmp(option,"2"));
 
     return 0;
 

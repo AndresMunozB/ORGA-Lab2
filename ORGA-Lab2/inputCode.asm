@@ -23,6 +23,6 @@ addi $sp, $sp, 4
 jr $ra
 
 main:
-addi $a0, $zero, 6
+addi $a0, $zero, 13
 jal factorial
 add $s0, $zero, $v0

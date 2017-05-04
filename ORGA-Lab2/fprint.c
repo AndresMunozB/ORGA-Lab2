@@ -49,7 +49,7 @@ void fprintInstruction(FILE* archivo,Instruction in){
 
 }
 
-void fprintRegisters(FILE* archivo, Program* program){
+/*void fprintRegisters(FILE* archivo, Program* program){
     int i;
     for (i=0;i<32;i++){
         fprintf(archivo," %3li ", program->registers[i]);
@@ -78,7 +78,7 @@ void fprintTitle(FILE* archivo, Program* program){
         fprintf(archivo,"  %s",program->nameRegisters[i]);
     }
     fprintf(archivo,"\n");
-}
+}*/
 
 FILE* openFileHtml(char* namefile){
     FILE *file = fopen(namefile,"w");
@@ -185,9 +185,9 @@ void fprintIDEXHtml(FILE* file, Program* program){
     fprintf(file, "MemToReg=%c<br>\n",program->buffers[1].linesControl[4]);
     fprintf(file, "Jump=%c<br>\n",program->buffers[1].linesControl[1]);
 
-    fprintf(file, "Read data 1=%d<br>\n",program->buffers[1].readData1);
-    fprintf(file, "Read data 2=%d<br>\n",program->buffers[1].readData2);
-    fprintf(file, "Sign-extend=%d<br>\n",program->buffers[1].signExtend);
+    fprintf(file, "Read data 1=%li<br>\n",program->buffers[1].readData1);
+    fprintf(file, "Read data 2=%li<br>\n",program->buffers[1].readData2);
+    fprintf(file, "Sign-extend=%li<br>\n",program->buffers[1].signExtend);
     fprintf(file, "Rs=%s<br>\n",program->buffers[1].rs);
     fprintf(file, "Rt=%s<br>\n",program->buffers[1].rt);
     fprintf(file, "Rd=%s<br>\n",program->buffers[1].rd);

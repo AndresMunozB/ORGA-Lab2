@@ -53,9 +53,28 @@ int getPClabel(char* label,Program* program);
  * @param Instruction in,Program* program, instruccion para cambiar las lineas de control del programa
 */
 void setLinesControl(Instruction in,Program* program);
+
 void nameRegistersInit(Program *program);
+
 void registersInit(Program *program);
+
+void upRegisters(Program *program);
+
+void resetInstruction(Instruction *in);
+
+void resetInstructionsProgram(Program *program);
+
+void resetInstructionStepsProgram(Program *program);
+
+void resetInstructionsBuffers(Program *program);
+
+void resetAllInstructions(Program *program);
+
 void loadInstructions(Program *program,char *filename);
+
+void resetBuffer(Buffer *buffer);
+
+void initBuffers(Program *program);
 /*
  * Funcion existFile
  * Funcion que inicializa una estructura program y retorna la direccion de momoria
@@ -63,7 +82,19 @@ void loadInstructions(Program *program,char *filename);
  * @return direccion de memoria de una estructura Program inicializada
 */
 Program* programInit(char *filename);
+
 void exInstruction(Instruction instruction,Program *program,int step);
+
+int checkEmptysInstructionsBuffers(Program *program);
+
+void updateBufferIF(Instruction in,Program *program);
+
+void fordwarding(Program *program);
+
+int is_nop(Program *program);
+
+void loadInstructionsSteps(Instruction in, Program *program);
+
 /*
  * Funcion exProgram
  * Funcion ejecuta un programa ya cargado
@@ -73,9 +104,6 @@ void exInstruction(Instruction instruction,Program *program,int step);
 */
 void exProgram(Program* program,char* nameFileR, char* nameFileB);
 
-void updateBufferIF(Instruction in,Program *program);
-void resetBuffer(Buffer *buffer);
-void resetInstruction(Instruction *in);
 
 
 
