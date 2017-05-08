@@ -6,3 +6,7 @@ Para ejecutar en windows:
 	programa
 Para ejecutar en linux:
 	./programa
+
+
+Dentro del programa al ingresar los nombres de los archivos poner la extensión de éstos.
+	En el caso de los archivos de salida poner la extensión .html

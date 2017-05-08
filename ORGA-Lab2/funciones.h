@@ -81,7 +81,7 @@ void initBuffers(Program *program);
  * @param char* filename, nombre del archivo del cual se cargara el programa
  * @return direccion de memoria de una estructura Program inicializada
 */
-Program* programInit(char *filename);
+Program* programInit(char *filename,char *fileName2);
 
 void exInstruction(Instruction instruction,Program *program,int step);
 

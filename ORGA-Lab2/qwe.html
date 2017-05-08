@@ -1,0 +1,12027 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Titulo</title>
+<style type="text/css">
+#contenedor { width: 90%; margin: 0 auto; }
+</style> </head>
+<body>
+<div id="contenedor">
+<h1>Buffers:</h1>
+<table border=1 cellspacing=0 bordercolor="0">
+<tr>
+<td>Ciclo</td>
+<td>IF/ID</td>
+<td>ID/EX</td>
+<td>EX/MEN</td>
+<td>MEM/WB</td>
+</tr>
+<tr>
+<td rowspan="2">C1</td>
+<td>
+j main
+</td>
+<td>
+Empty
+</td>
+<td>
+Empty
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000004<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C2</td>
+<td>
+addi $a0, $zero, 13
+</td>
+<td>
+j main
+</td>
+<td>
+Empty
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000054<br>
+</td>
+<td>
+Add_PC=0x00000004<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=20<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C3</td>
+<td>
+jal factorial
+</td>
+<td>
+addi $a0, $zero, 13
+</td>
+<td>
+j main
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000058<br>
+</td>
+<td>
+Add_PC=0x00000054<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=1386<br>
+Sign-extend=13<br>
+Rs=$zero<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C4</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+addi $a0, $zero, 13
+</td>
+<td>
+j main
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000058<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=13<br>
+Read data 2=1386<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C5</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+addi $a0, $zero, 13
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=13<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C6</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4096<br>
+Read data 2=4096<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C7</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4096<br>
+Read data 2=22<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4088<br>
+Read data 2=4096<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C8</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4096<br>
+Read data 2=13<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4088<br>
+Read data 2=22<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4088<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C9</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=13<br>
+Read data 2=13<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4092<br>
+Read data 2=13<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4088<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C10</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=7<br>
+Read data 2=13<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=12<br>
+Read data 2=13<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4092<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C11</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=7<br>
+Read data 2=13<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=19<br>
+Read data 2=12<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=12<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C12</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=31<br>
+Read data 2=12<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=19<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C13</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=31<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C14</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4088<br>
+Read data 2=4088<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C15</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4088<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4080<br>
+Read data 2=4088<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C16</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4088<br>
+Read data 2=12<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4080<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4080<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C17</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=12<br>
+Read data 2=12<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4084<br>
+Read data 2=12<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4080<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C18</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=19<br>
+Read data 2=12<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=11<br>
+Read data 2=12<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4084<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C19</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=19<br>
+Read data 2=12<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=30<br>
+Read data 2=11<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=11<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C20</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=41<br>
+Read data 2=11<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=30<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C21</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=41<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C22</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4080<br>
+Read data 2=4080<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C23</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4080<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4072<br>
+Read data 2=4080<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C24</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4080<br>
+Read data 2=11<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4072<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4072<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C25</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=11<br>
+Read data 2=11<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4076<br>
+Read data 2=11<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4072<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C26</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=30<br>
+Read data 2=11<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=10<br>
+Read data 2=11<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4076<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C27</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=30<br>
+Read data 2=11<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=40<br>
+Read data 2=10<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=10<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C28</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=50<br>
+Read data 2=10<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=40<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C29</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=50<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C30</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4072<br>
+Read data 2=4072<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C31</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4072<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4064<br>
+Read data 2=4072<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C32</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4072<br>
+Read data 2=10<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4064<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4064<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C33</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=10<br>
+Read data 2=10<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4068<br>
+Read data 2=10<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4064<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C34</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=40<br>
+Read data 2=10<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=9<br>
+Read data 2=10<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4068<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C35</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=40<br>
+Read data 2=10<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=49<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=9<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C36</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=58<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=49<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C37</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=58<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C38</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4064<br>
+Read data 2=4064<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C39</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4064<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4056<br>
+Read data 2=4064<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C40</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4064<br>
+Read data 2=9<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4056<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4056<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C41</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=9<br>
+Read data 2=9<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4060<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4056<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C42</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=49<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=8<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4060<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C43</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=49<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=57<br>
+Read data 2=8<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=8<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C44</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=65<br>
+Read data 2=8<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=57<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C45</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=65<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C46</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4056<br>
+Read data 2=4056<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C47</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4056<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4048<br>
+Read data 2=4056<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C48</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4056<br>
+Read data 2=8<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4048<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4048<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C49</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=8<br>
+Read data 2=8<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4052<br>
+Read data 2=8<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4048<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C50</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=57<br>
+Read data 2=8<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=7<br>
+Read data 2=8<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4052<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C51</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=57<br>
+Read data 2=8<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=64<br>
+Read data 2=7<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=7<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C52</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=71<br>
+Read data 2=7<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=64<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C53</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=71<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C54</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4048<br>
+Read data 2=4048<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C55</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4048<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4040<br>
+Read data 2=4048<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C56</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4048<br>
+Read data 2=7<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4040<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4040<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C57</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=7<br>
+Read data 2=7<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4044<br>
+Read data 2=7<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4040<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C58</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=64<br>
+Read data 2=7<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=6<br>
+Read data 2=7<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4044<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C59</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=64<br>
+Read data 2=7<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=70<br>
+Read data 2=6<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=6<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C60</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=76<br>
+Read data 2=6<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=70<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C61</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=76<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C62</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4040<br>
+Read data 2=4040<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C63</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4040<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4032<br>
+Read data 2=4040<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C64</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4040<br>
+Read data 2=6<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4032<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4032<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C65</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=6<br>
+Read data 2=6<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4036<br>
+Read data 2=6<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4032<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C66</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=70<br>
+Read data 2=6<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=5<br>
+Read data 2=6<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4036<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C67</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=70<br>
+Read data 2=6<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=75<br>
+Read data 2=5<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=5<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C68</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=80<br>
+Read data 2=5<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=75<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C69</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=80<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C70</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4032<br>
+Read data 2=4032<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C71</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4032<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4024<br>
+Read data 2=4032<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C72</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4032<br>
+Read data 2=5<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4024<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4024<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C73</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=5<br>
+Read data 2=5<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4028<br>
+Read data 2=5<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4024<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C74</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=75<br>
+Read data 2=5<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4<br>
+Read data 2=5<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4028<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C75</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=75<br>
+Read data 2=5<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=79<br>
+Read data 2=4<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C76</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=83<br>
+Read data 2=4<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=79<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C77</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=83<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C78</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4024<br>
+Read data 2=4024<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C79</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4024<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4016<br>
+Read data 2=4024<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C80</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4024<br>
+Read data 2=4<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4016<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4016<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C81</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4<br>
+Read data 2=4<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4020<br>
+Read data 2=4<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4016<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C82</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=79<br>
+Read data 2=4<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=3<br>
+Read data 2=4<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4020<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C83</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=79<br>
+Read data 2=4<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=82<br>
+Read data 2=3<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=3<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C84</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=85<br>
+Read data 2=3<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=82<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C85</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=85<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C86</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4016<br>
+Read data 2=4016<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C87</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4016<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4008<br>
+Read data 2=4016<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C88</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4016<br>
+Read data 2=3<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4008<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4008<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C89</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=3<br>
+Read data 2=3<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4012<br>
+Read data 2=3<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4008<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C90</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=82<br>
+Read data 2=3<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=2<br>
+Read data 2=3<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4012<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C91</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=82<br>
+Read data 2=3<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=84<br>
+Read data 2=2<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=2<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C92</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=86<br>
+Read data 2=2<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=84<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C93</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=86<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C94</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4008<br>
+Read data 2=4008<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C95</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4008<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4000<br>
+Read data 2=4008<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C96</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4008<br>
+Read data 2=2<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4000<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4000<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C97</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=2<br>
+Read data 2=2<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=4004<br>
+Read data 2=2<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4000<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C98</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=84<br>
+Read data 2=2<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=1<br>
+Read data 2=2<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=4004<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C99</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=84<br>
+Read data 2=2<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=85<br>
+Read data 2=1<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=1<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C100</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=86<br>
+Read data 2=1<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=85<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C101</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=86<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C102</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4000<br>
+Read data 2=4000<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C103</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000014<br>
+</td>
+<td>
+Add_PC=0x00000010<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4000<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=3992<br>
+Read data 2=4000<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C104</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000018<br>
+</td>
+<td>
+Add_PC=0x00000014<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=x<br>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=4000<br>
+Read data 2=1<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=3992<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=3992<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C105</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+<td>
+sw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000001c<br>
+</td>
+<td>
+Add_PC=0x00000018<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=1<br>
+Read data 2=1<br>
+Sign-extend=-1<br>
+Rs=$a0<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=1<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=3996<br>
+Read data 2=1<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=3992<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C106</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+<td>
+sw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000020<br>
+</td>
+<td>
+Add_PC=0x0000001c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=85<br>
+Read data 2=1<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=1<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=3996<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C107</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+<td>
+addi $a0, $a0, -1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000024<br>
+</td>
+<td>
+Add_PC=0x00000020<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=85<br>
+Read data 2=1<br>
+Sign-extend=0<br>
+Rs=$t0<br>
+Rt=$a0<br>
+Rd=$t1<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=85<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=$t0<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C108</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+<td>
+add $t0, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000008<br>
+</td>
+<td>
+Add_PC=0x00000024<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=1<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=85<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=$t1<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=85<br>
+Mux RegDst=$t0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C109</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+<td>
+add $t1, $t0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000000c<br>
+</td>
+<td>
+Add_PC=0x00000008<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=1<br>
+RegDst=x<br>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=14<br>
+Rs=$a0<br>
+Rt=$zero<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=85<br>
+Mux RegDst=$t1<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C110</td>
+<td>
+sw $ra, 0($sp)
+</td>
+<td>
+addi $sp, $sp, -8
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+<td>
+jal factorial
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000010<br>
+</td>
+<td>
+Add_PC=0x0000000c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=3992<br>
+Read data 2=3992<br>
+Sign-extend=-8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=1<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C111</td>
+<td>
+addi $v0, $zero, 1
+</td>
+<td>
+Empty
+</td>
+<td>
+Empty
+</td>
+<td>
+beq $a0, $zero, condicionBorde
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000003c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C112</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+addi $v0, $zero, 1
+</td>
+<td>
+Empty
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000040<br>
+</td>
+<td>
+Add_PC=0x0000003c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=15<br>
+Sign-extend=1<br>
+Rs=$zero<br>
+Rt=$v0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C113</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+addi $v0, $zero, 1
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000040<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=3992<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=1<br>
+Read data 2=15<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C114</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+addi $v0, $zero, 1
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000044<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=3992<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=1<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C115</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000044<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=3992<br>
+Read data 2=0<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=3992<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C116</td>
+<td>
+addi $sp, $sp, 4
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000048<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=3996<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C117</td>
+<td>
+addi $sp, $sp, 4
+</td>
+<td>
+addi $sp, $sp, 4
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000004c<br>
+</td>
+<td>
+Add_PC=0x00000048<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=3992<br>
+Read data 2=3992<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=1<br>
+ALU Result=3996<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C118</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 4
+</td>
+<td>
+addi $sp, $sp, 4
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000050<br>
+</td>
+<td>
+Add_PC=0x0000004c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=3992<br>
+Read data 2=3992<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=3996<br>
+Read data 2=3992<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C119</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 4
+</td>
+<td>
+addi $sp, $sp, 4
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000028<br>
+</td>
+<td>
+Add_PC=0x00000050<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4000<br>
+Read data 2=3996<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=3996<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C120</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 4
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000028<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=3996<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4000<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C121</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000002c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4000<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C122</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x0000002c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4000<br>
+Read data 2=1<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=4000<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C123</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000030<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4004<br>
+Read data 2=1<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C124</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000034<br>
+</td>
+<td>
+Add_PC=0x00000030<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=1<br>
+Read data 2=1<br>
+Sign-extend=0<br>
+Rs=$v0<br>
+Rt=$a0<br>
+Rd=$v0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=2<br>
+ALU Result=4004<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C125</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000038<br>
+</td>
+<td>
+Add_PC=0x00000034<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4000<br>
+Read data 2=4000<br>
+Sign-extend=8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=2<br>
+Read data 2=2<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C126</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000028<br>
+</td>
+<td>
+Add_PC=0x00000038<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4008<br>
+Read data 2=4000<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=2<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C127</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000028<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4000<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4008<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C128</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000002c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4008<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C129</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x0000002c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4008<br>
+Read data 2=2<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=4008<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C130</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000030<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4012<br>
+Read data 2=2<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C131</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000034<br>
+</td>
+<td>
+Add_PC=0x00000030<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=2<br>
+Read data 2=2<br>
+Sign-extend=0<br>
+Rs=$v0<br>
+Rt=$a0<br>
+Rd=$v0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=3<br>
+ALU Result=4012<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C132</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000038<br>
+</td>
+<td>
+Add_PC=0x00000034<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4008<br>
+Read data 2=4008<br>
+Sign-extend=8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=6<br>
+Read data 2=3<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C133</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000028<br>
+</td>
+<td>
+Add_PC=0x00000038<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4016<br>
+Read data 2=4008<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=6<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C134</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000028<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4008<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4016<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C135</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000002c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4016<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C136</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x0000002c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4016<br>
+Read data 2=3<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=4016<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C137</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000030<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4020<br>
+Read data 2=3<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C138</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000034<br>
+</td>
+<td>
+Add_PC=0x00000030<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=6<br>
+Read data 2=3<br>
+Sign-extend=0<br>
+Rs=$v0<br>
+Rt=$a0<br>
+Rd=$v0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=4<br>
+ALU Result=4020<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C139</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000038<br>
+</td>
+<td>
+Add_PC=0x00000034<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4016<br>
+Read data 2=4016<br>
+Sign-extend=8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=24<br>
+Read data 2=4<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C140</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000028<br>
+</td>
+<td>
+Add_PC=0x00000038<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4024<br>
+Read data 2=4016<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=24<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C141</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000028<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4016<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4024<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C142</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000002c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4024<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C143</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x0000002c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4024<br>
+Read data 2=4<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=4024<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C144</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000030<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4028<br>
+Read data 2=4<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C145</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000034<br>
+</td>
+<td>
+Add_PC=0x00000030<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=24<br>
+Read data 2=4<br>
+Sign-extend=0<br>
+Rs=$v0<br>
+Rt=$a0<br>
+Rd=$v0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=5<br>
+ALU Result=4028<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C146</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000038<br>
+</td>
+<td>
+Add_PC=0x00000034<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4024<br>
+Read data 2=4024<br>
+Sign-extend=8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=120<br>
+Read data 2=5<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C147</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000028<br>
+</td>
+<td>
+Add_PC=0x00000038<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4032<br>
+Read data 2=4024<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=120<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C148</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000028<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4024<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4032<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C149</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000002c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4032<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C150</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x0000002c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4032<br>
+Read data 2=5<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=4032<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C151</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000030<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4036<br>
+Read data 2=5<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C152</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000034<br>
+</td>
+<td>
+Add_PC=0x00000030<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=120<br>
+Read data 2=5<br>
+Sign-extend=0<br>
+Rs=$v0<br>
+Rt=$a0<br>
+Rd=$v0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=6<br>
+ALU Result=4036<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C153</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000038<br>
+</td>
+<td>
+Add_PC=0x00000034<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4032<br>
+Read data 2=4032<br>
+Sign-extend=8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=720<br>
+Read data 2=6<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C154</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000028<br>
+</td>
+<td>
+Add_PC=0x00000038<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4040<br>
+Read data 2=4032<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=720<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C155</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000028<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4032<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4040<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C156</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000002c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4040<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C157</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x0000002c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4040<br>
+Read data 2=6<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=4040<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C158</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000030<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4044<br>
+Read data 2=6<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C159</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000034<br>
+</td>
+<td>
+Add_PC=0x00000030<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=720<br>
+Read data 2=6<br>
+Sign-extend=0<br>
+Rs=$v0<br>
+Rt=$a0<br>
+Rd=$v0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=7<br>
+ALU Result=4044<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C160</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000038<br>
+</td>
+<td>
+Add_PC=0x00000034<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4040<br>
+Read data 2=4040<br>
+Sign-extend=8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=5040<br>
+Read data 2=7<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C161</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000028<br>
+</td>
+<td>
+Add_PC=0x00000038<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4048<br>
+Read data 2=4040<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=5040<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C162</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000028<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4040<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4048<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C163</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000002c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4048<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C164</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x0000002c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4048<br>
+Read data 2=7<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=4048<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C165</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000030<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4052<br>
+Read data 2=7<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C166</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000034<br>
+</td>
+<td>
+Add_PC=0x00000030<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=5040<br>
+Read data 2=7<br>
+Sign-extend=0<br>
+Rs=$v0<br>
+Rt=$a0<br>
+Rd=$v0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=8<br>
+ALU Result=4052<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C167</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000038<br>
+</td>
+<td>
+Add_PC=0x00000034<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4048<br>
+Read data 2=4048<br>
+Sign-extend=8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=40320<br>
+Read data 2=8<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C168</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000028<br>
+</td>
+<td>
+Add_PC=0x00000038<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4056<br>
+Read data 2=4048<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=40320<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C169</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000028<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4048<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4056<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C170</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000002c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4056<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C171</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x0000002c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4056<br>
+Read data 2=8<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=4056<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C172</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000030<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4060<br>
+Read data 2=8<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C173</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000034<br>
+</td>
+<td>
+Add_PC=0x00000030<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=40320<br>
+Read data 2=8<br>
+Sign-extend=0<br>
+Rs=$v0<br>
+Rt=$a0<br>
+Rd=$v0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=4060<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C174</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000038<br>
+</td>
+<td>
+Add_PC=0x00000034<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4056<br>
+Read data 2=4056<br>
+Sign-extend=8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=362880<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C175</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000028<br>
+</td>
+<td>
+Add_PC=0x00000038<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4064<br>
+Read data 2=4056<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=362880<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C176</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000028<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4056<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4064<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C177</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000002c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4064<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C178</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x0000002c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4064<br>
+Read data 2=9<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=4064<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C179</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000030<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4068<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C180</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000034<br>
+</td>
+<td>
+Add_PC=0x00000030<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=362880<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$v0<br>
+Rt=$a0<br>
+Rd=$v0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=10<br>
+ALU Result=4068<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C181</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000038<br>
+</td>
+<td>
+Add_PC=0x00000034<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4064<br>
+Read data 2=4064<br>
+Sign-extend=8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=3628800<br>
+Read data 2=10<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C182</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000028<br>
+</td>
+<td>
+Add_PC=0x00000038<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4072<br>
+Read data 2=4064<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=3628800<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C183</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000028<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4064<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4072<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C184</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000002c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4072<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C185</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x0000002c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4072<br>
+Read data 2=10<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=4072<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C186</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000030<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4076<br>
+Read data 2=10<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C187</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000034<br>
+</td>
+<td>
+Add_PC=0x00000030<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=3628800<br>
+Read data 2=10<br>
+Sign-extend=0<br>
+Rs=$v0<br>
+Rt=$a0<br>
+Rd=$v0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=11<br>
+ALU Result=4076<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C188</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000038<br>
+</td>
+<td>
+Add_PC=0x00000034<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4072<br>
+Read data 2=4072<br>
+Sign-extend=8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=39916800<br>
+Read data 2=11<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C189</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000028<br>
+</td>
+<td>
+Add_PC=0x00000038<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4080<br>
+Read data 2=4072<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=39916800<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C190</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000028<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4072<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4080<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C191</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000002c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4080<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C192</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x0000002c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4080<br>
+Read data 2=11<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=9<br>
+ALU Result=4080<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C193</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000030<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4084<br>
+Read data 2=11<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C194</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000034<br>
+</td>
+<td>
+Add_PC=0x00000030<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=39916800<br>
+Read data 2=11<br>
+Sign-extend=0<br>
+Rs=$v0<br>
+Rt=$a0<br>
+Rd=$v0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=12<br>
+ALU Result=4084<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C195</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000038<br>
+</td>
+<td>
+Add_PC=0x00000034<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4080<br>
+Read data 2=4080<br>
+Sign-extend=8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=479001600<br>
+Read data 2=12<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C196</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000028<br>
+</td>
+<td>
+Add_PC=0x00000038<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4088<br>
+Read data 2=4080<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=479001600<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C197</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x00000028<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4080<br>
+Read data 2=9<br>
+Sign-extend=0<br>
+Rs=$sp<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4088<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C198</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000002c<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4088<br>
+Read data 2=9<br>
+Add result=0<br>
+Mux RegDst=$ra<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C199</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $ra, 0($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000000<br>
+</td>
+<td>
+Add_PC=0x0000002c<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Jump=0<br>
+Read data 1=4088<br>
+Read data 2=12<br>
+Sign-extend=4<br>
+Rs=$sp<br>
+Rt=$a0<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=22<br>
+ALU Result=4088<br>
+Mux RegDst=$ra<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C200</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000030<br>
+</td>
+<td>
+Add_PC=0x00000000<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=1<br>
+RegWrite=1<br>
+MemToReg=1<br>
+Zero=0<br>
+ALU Result=4092<br>
+Read data 2=12<br>
+Add result=0<br>
+Mux RegDst=$a0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C201</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+<td>
+lw $a0, 4($sp)
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000034<br>
+</td>
+<td>
+Add_PC=0x00000030<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=479001600<br>
+Read data 2=12<br>
+Sign-extend=0<br>
+Rs=$v0<br>
+Rt=$a0<br>
+Rd=$v0<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=1<br>
+Read data=13<br>
+ALU Result=4092<br>
+Mux RegDst=$a0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C202</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000038<br>
+</td>
+<td>
+Add_PC=0x00000034<br>
+ALUSrc=1<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=4088<br>
+Read data 2=4088<br>
+Sign-extend=8<br>
+Rs=$sp<br>
+Rt=$sp<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=1932053504<br>
+Read data 2=13<br>
+Add result=0<br>
+Mux RegDst=$v0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C203</td>
+<td>
+add $s0, $zero, $v0
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+<td>
+mul $v0, $v0, $a0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000005c<br>
+</td>
+<td>
+Add_PC=0x00000038<br>
+ALUSrc=x<br>
+ALUOp1=x<br>
+ALUOp2=x<br>
+RegDst=x<br>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Jump=1<br>
+Read data 1=0<br>
+Read data 2=22<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=$ra<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=4096<br>
+Read data 2=4088<br>
+Add result=0<br>
+Mux RegDst=$sp<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=1932053504<br>
+Mux RegDst=$v0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C204</td>
+<td>
+Empty
+</td>
+<td>
+add $s0, $zero, $v0
+</td>
+<td>
+jr $ra
+</td>
+<td>
+addi $sp, $sp, 8
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000060<br>
+</td>
+<td>
+Add_PC=0x0000005c<br>
+ALUSrc=0<br>
+ALUOp1=1<br>
+ALUOp2=0<br>
+RegDst=1<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=1932053504<br>
+Sign-extend=0<br>
+Rs=$zero<br>
+Rt=$v0<br>
+Rd=$s0<br>
+</td>
+<td>
+Branch=x<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=x<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=22<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=4096<br>
+Mux RegDst=$sp<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C205</td>
+<td>
+Empty
+</td>
+<td>
+Empty
+</td>
+<td>
+add $s0, $zero, $v0
+</td>
+<td>
+jr $ra
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000064<br>
+</td>
+<td>
+Add_PC=0x00000060<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=1<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=1932053504<br>
+Read data 2=1932053504<br>
+Add result=0<br>
+Mux RegDst=$s0<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=x<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C206</td>
+<td>
+Empty
+</td>
+<td>
+Empty
+</td>
+<td>
+Empty
+</td>
+<td>
+add $s0, $zero, $v0
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x00000068<br>
+</td>
+<td>
+Add_PC=0x00000064<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=1<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=1932053504<br>
+Mux RegDst=$s0<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">C207</td>
+<td>
+Empty
+</td>
+<td>
+Empty
+</td>
+<td>
+Empty
+</td>
+<td>
+Empty
+</td>
+</tr>
+<tr>
+<td>
+Add_PC=0x0000006c<br>
+</td>
+<td>
+Add_PC=0x00000068<br>
+ALUSrc=0<br>
+ALUOp1=0<br>
+ALUOp2=0<br>
+RegDst=0<br>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Jump=0<br>
+Read data 1=0<br>
+Read data 2=0<br>
+Sign-extend=0<br>
+Rs=<br>
+Rt=<br>
+Rd=<br>
+</td>
+<td>
+Branch=0<br>
+MemWrite=0<br>
+MemRead=0<br>
+RegWrite=0<br>
+MemToReg=0<br>
+Zero=0<br>
+ALU Result=0<br>
+Read data 2=0<br>
+Add result=0<br>
+Mux RegDst=<br>
+</td>
+<td>
+RegWrite=0<br>
+MemToReg=0<br>
+Read data=0<br>
+ALU Result=0<br>
+Mux RegDst=<br>
+</td>
+</tr>
+</div>
+</body>
+</html>

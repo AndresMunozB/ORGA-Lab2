@@ -36,7 +36,7 @@ int main(){
             fflush(stdin);
             scanf("%s", nameFileEntrada);
 
-            memset(nameFileEntradaReg,0,sizeof(nameFileEntrada));
+            memset(nameFileEntradaReg,0,sizeof(nameFileEntradaReg));
             printf("Ingrese el nombre del archivo de entrada de registros: ");
             fflush(stdin);
             scanf("%s", nameFileEntradaReg);
@@ -51,8 +51,8 @@ int main(){
             fflush(stdin);
             scanf("%s", nameFileB);
 
-            if (existsFile(nameFileEntrada) && existsFile(nameFileEntrada) && strcmp(nameFileR,nameFileB)){
-                program = (Program*) programInit(nameFileEntrada);
+            if (existsFile(nameFileEntrada) && existsFile(nameFileEntradaReg) && strcmp(nameFileR,nameFileB)){
+                program = (Program*) programInit(nameFileEntrada,nameFileEntradaReg);
                 //fprintRegistersHtml(program);
                 exProgram(program,nameFileR,nameFileB);
             }

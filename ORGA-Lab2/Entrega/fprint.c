@@ -49,7 +49,7 @@ void fprintInstruction(FILE* archivo,Instruction in){
 
 }
 
-/*void fprintRegisters(FILE* archivo, Program* program){
+void fprintRegisters(FILE* archivo, Program* program){
     int i;
     for (i=0;i<32;i++){
         fprintf(archivo," %3li ", program->registers[i]);
@@ -78,7 +78,7 @@ void fprintTitle(FILE* archivo, Program* program){
         fprintf(archivo,"  %s",program->nameRegisters[i]);
     }
     fprintf(archivo,"\n");
-}*/
+}
 
 FILE* openFileHtml(char* namefile){
     FILE *file = fopen(namefile,"w");
